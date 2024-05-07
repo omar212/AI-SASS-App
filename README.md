@@ -1,4 +1,4 @@
-# AI-SaaS Product: Conversify
+# AI-SaaS Product: Genius App
 
 ## Overview
 Conversify is an innovative AI-powered Software as a Service (SaaS) platform designed to revolutionize content creation. Our cutting-edge AI algorithms generate engaging conversation, stunning images, captivating videos, melodious music, and even snippets of code, all tailored to your specific needs.
