@@ -15,6 +15,8 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 
 import Empty from "@/components/empty";
+import { Loader } from "@/components/loader";
+import { cn } from "@/lib/utils";
 // import ChatCompletionRequestMessage from "openai"
 
 interface ChatCompletionRequestMessage {
@@ -115,7 +117,9 @@ const Conversation = () => {
                 </div>
                 <div className="space-y-4 mt-4">
                     {isLoading && (
-                        <div className="p-8 rounded-lg w-full items-center justify-center bg-muted"></div>
+                        <div className="p-8 rounded-lg w-full items-center justify-center bg-muted">
+                            <Loader />
+                        </div>
                     )}
                     
                     {messages.length === 0 && !isLoading && (
@@ -124,7 +128,12 @@ const Conversation = () => {
                     <div className="flex flex-col-reverse gap-y-4">
                         {
                             messages.map((message) => (
-                                <div key={message.content}>
+                                <div 
+                                    key={message.content}
+                                    className={cn(
+                                        "p-8 w-full flex items-start gap-x-8 rounded-lg",
+                                        message.role === "user" ? "bg-white border border-black/10" : "bg-muted"
+                                    )}>
                                     {message.content}
                                 </div>
                             ))
