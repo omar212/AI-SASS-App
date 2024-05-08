@@ -1,6 +1,7 @@
 "use client";
 
 import * as z from "zod";
+import { useState } from "react";
 import { Heading } from "@/components/heading";
 import { MessageSquare } from "lucide-react";
 import { useForm } from "react-hook-form";
@@ -12,7 +13,8 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+
+import Empty from "@/components/empty";
 // import ChatCompletionRequestMessage from "openai"
 
 interface ChatCompletionRequestMessage {
@@ -112,6 +114,13 @@ const Conversation = () => {
                     </Form>
                 </div>
                 <div className="space-y-4 mt-4">
+                    {isLoading && (
+                        <div className="p-8 rounded-lg w-full items-center justify-center bg-muted"></div>
+                    )}
+                    
+                    {messages.length === 0 && !isLoading && (
+                            <Empty label="No conversation started." />
+                    )}
                     <div className="flex flex-col-reverse gap-y-4">
                         {
                             messages.map((message) => (
