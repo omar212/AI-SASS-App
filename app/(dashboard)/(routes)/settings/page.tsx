@@ -3,7 +3,7 @@
 import * as z from "zod";
 import { useState } from "react";
 import { Heading } from "@/components/heading";
-import { Code, Image } from "lucide-react";
+import { Code, Image, Settings } from "lucide-react";
 import { useForm } from "react-hook-form";
 
 import { formSchema } from "./constants";
@@ -27,7 +27,7 @@ interface ChatCompletionRequestMessage {
   }
 
 
-const ImagePage = () => {
+const SettingsPage = () => {
     const router = useRouter();
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
@@ -69,15 +69,15 @@ const ImagePage = () => {
     return ( 
         <div>
             <Heading 
-                title="Image Generation" 
-                description="Generate images using OpenAI's GPT-3."
-                icon={Image}
-                iconColor="text-red-700"
-                bgColor="bg-red-700/10" 
+                title="Settings" 
+                description="Generate settings using AI."
+                icon={Settings}
+                iconColor="text-white-700"
+                bgColor="bg-gray-700/10" 
             />
             {
                 true ? (
-                    <div className="flex items-center justify-center text-5xl text-red-700 font-bold">
+                    <div className="flex items-center justify-center text-5xl text-gray-700 font-bold">
                         <i>Coming soon...</i>
                     </div>
                 ) : (
@@ -161,4 +161,4 @@ const ImagePage = () => {
     );
 }
  
-export default ImagePage;
+export default SettingsPage;
