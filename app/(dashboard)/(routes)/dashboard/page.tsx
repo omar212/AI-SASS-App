@@ -15,28 +15,28 @@ const tools = [
   },
   {
     label: "Music Generation",
-    icon: MessageSquare,
+    icon: Music,
     color: "text-emerald-500",
     bgColor: "bg-emerald-500/10",
     href: "/music"
   },
   {
     label: "Image Generation",
-    icon: MessageSquare,
+    icon: ImageIcon,
     color: "text-pink-700",
     bgColor: "bg-pink-700/10",
     href: "/image"
   },
   {
     label: "Video Generation",
-    icon: MessageSquare,
+    icon: VideoIcon,
     color: "text-orange-500",
     bgColor: "bg-orange-500/10",
     href: "/video"
   },
   {
     label: "Code Generation",
-    icon: MessageSquare,
+    icon: Code,
     color: "text-green-700",
     bgColor: "bg-green-700/10",
     href: "/code"
@@ -57,8 +57,7 @@ const DashboardPage = () => {
         </p>
       </div>
       <div className="px-4 md:px-20 lg:px-32 space-y-4">
-        {
-         tools.map((tool) => (
+        {tools.map((tool) => (
           <Card 
             onClick={() => router.push(tool.href)}
             key={tool.href}
@@ -74,8 +73,7 @@ const DashboardPage = () => {
             </div>
             <ArrowRight className="w-5 h-5 text-black/50" />
           </Card>
-         )) 
-        }
+         ))}
       </div>
     </div>
   );

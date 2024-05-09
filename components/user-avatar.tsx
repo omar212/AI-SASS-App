@@ -3,9 +3,9 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export const UserAvatar = () => {
     const { user } = useUser();
-
-    return (
+    return (    
         <Avatar className="h-8 w-8">
+            
             <AvatarImage src={user?.imageUrl} />
             <AvatarFallback>
                 {user?.firstName?.charAt(0)}

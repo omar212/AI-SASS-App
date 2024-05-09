@@ -7,10 +7,10 @@ import Sidebar from "@/components/sidebar";
 import { useEffect, useState } from "react";
 
 const MobileSidebar = () => {
-    const [isMounted, setIsMonuted] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
     useEffect(() => {
-        setIsMonuted(true);
+        setIsMounted(true);
     }, []);
 
     if (!isMounted) return null;
