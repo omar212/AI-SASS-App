@@ -76,7 +76,7 @@ const Conversation = () => {
                 bgColor="bg-violet-500/10" 
             />
             <div className="px-4 lg:px-8">
-                <div className="">
+                <div>
                     <Form {...form}>
                         <form 
                             onSubmit={form.handleSubmit(onSubmit)}
@@ -88,7 +88,8 @@ const Conversation = () => {
                                 px-3
                                 md:px-6
                                 focus-within:shadow-sm
-                                gridgrid-cols=12
+                                grid
+                                grid-cols-12
                                 gap-2
                             ">
                                 <FormField
